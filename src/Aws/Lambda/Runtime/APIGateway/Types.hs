@@ -81,7 +81,7 @@ parseObjectFromStringField obj fieldName = do
     Null -> pure Nothing
     other -> T.typeMismatch "String or Null" other
 
-parseApiGatewayRequest :: (Object -> Text -> Parser (Maybe body)) -> Value -> Parser (ApiGatewayRequest body)
+parseApiGatewayRequest :: (Object -> T.Key -> Parser (Maybe body)) -> Value -> Parser (ApiGatewayRequest body)
 parseApiGatewayRequest bodyParser (Object v) =
   ApiGatewayRequest
     <$> v .: "resource"
