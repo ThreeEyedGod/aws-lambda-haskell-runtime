@@ -20,7 +20,6 @@ import Aws.Lambda.Utilities (toJSONText)
 import Data.Aeson
   ( FromJSON (parseJSON),
     KeyValue ((.=)),
-    IsString (fromString),
     Object,
     ToJSON (toJSON),
     Value (Null, Object, String),
