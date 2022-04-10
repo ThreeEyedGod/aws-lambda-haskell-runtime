@@ -14,7 +14,8 @@ category: AWS
 description: Please see the README on GitHub at <https://github.com/theam/aws-lambda-haskell-runtime#readme>
 
 dependencies:
-  - base >= 4.7 && < 5
+#  - base >= 4.7 && < 5
+  - base >= 4.12 && < 5
 
 library:
   dependencies:
