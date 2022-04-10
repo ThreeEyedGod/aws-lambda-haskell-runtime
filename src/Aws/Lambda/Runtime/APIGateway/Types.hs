@@ -31,6 +31,7 @@ import Data.Aeson
   )
 import Data.Aeson.Types (Parser)
 import qualified Data.Aeson.Types as T
+import Data.Aeson.Key (IsString)
 import qualified Data.CaseInsensitive as CI
 import Data.HashMap.Strict (HashMap)
 import Data.Text (Text)
