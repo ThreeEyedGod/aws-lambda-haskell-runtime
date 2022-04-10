@@ -20,6 +20,7 @@ import Aws.Lambda.Utilities (toJSONText)
 import Data.Aeson
   ( FromJSON (parseJSON),
     KeyValue ((.=)),
+    IsString (fromString),
     Object,
     ToJSON (toJSON),
     Value (Null, Object, String),
@@ -215,5 +216,5 @@ mkApiGatewayResponse code headers payload =
 headerToPair :: Header -> T.Pair
 headerToPair (cibyte, bstr) = k .= v
   where
-    k = (T.decodeUtf8 . CI.original) cibyte
+    k = (fromString . T.unpack . T.decodeUtf8 . CI.original) cibyte
     v = T.decodeUtf8 bstr
