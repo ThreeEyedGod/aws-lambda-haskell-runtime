@@ -70,7 +70,7 @@ instance FromJSON body => FromJSON (ApiGatewayRequest body) where
   parseJSON = parseApiGatewayRequest parseObjectFromStringField
 
 -- We need this because API Gateway is going to send us the payload as a JSON string
-parseObjectFromStringField :: FromJSON a => Object -> Text -> Parser (Maybe a)
+parseObjectFromStringField :: FromJSON a => Object -> T.Key -> Parser (Maybe a)
 parseObjectFromStringField obj fieldName = do
   fieldContents <- obj .: fieldName
   case fieldContents of
